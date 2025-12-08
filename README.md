@@ -44,6 +44,10 @@ Swagger UI is available at:
 - `DELETE /products/{id}`: Delete product
 - `GET /products/summary`: Get inventory statistics
 
+### Postman Collection
+
+Import `postman_collection.json` into Postman to see example requests for all endpoints.
+
 ## Testing
 
 Run unit tests:
