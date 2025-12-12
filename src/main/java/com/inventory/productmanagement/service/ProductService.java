@@ -25,7 +25,6 @@ public class ProductService {
         product.setName(productDto.getName());
         product.setQuantity(productDto.getQuantity());
         product.setPrice(productDto.getPrice());
-        // For updates, we might need to handle ID, but simplify for create first
         return productRepository.save(product);
     }
 

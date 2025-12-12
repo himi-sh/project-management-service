@@ -19,7 +19,7 @@ import java.util.List;
 @RequestMapping("/products")
 @RequiredArgsConstructor
 public class ProductController {
-
+    // TODO: Define interface for controller
     private final ProductService productService;
 
     @PostMapping
@@ -42,39 +42,7 @@ public class ProductController {
 
     @PutMapping("/{id}/quantity")
     @Operation(summary = "Update product quantity")
-    public ResponseEntity<Product> updateQuantity(@PathVariable Long id, @RequestParam Integer quantity) { // Taking
-                                                                                                           // quantity
-                                                                                                           // as param
-                                                                                                           // or body?
-                                                                                                           // Requirement
-                                                                                                           // says PUT
-                                                                                                           // /products/{id}/quantity.
-                                                                                                           // Usually
-                                                                                                           // implies
-                                                                                                           // body or
-                                                                                                           // path, but
-                                                                                                           // param is
-                                                                                                           // easiest.
-                                                                                                           // Let's
-                                                                                                           // assume
-                                                                                                           // request
-                                                                                                           // param
-                                                                                                           // "quantity=10"
-                                                                                                           // or body
-                                                                                                           // value.
-                                                                                                           // I'll
-                                                                                                           // support
-                                                                                                           // param for
-                                                                                                           // simplicity
-                                                                                                           // or body if
-                                                                                                           // strictly
-                                                                                                           // REST.
-                                                                                                           // Let's use
-                                                                                                           // RequestParam.
-        // Wait, "PUT /products/{id}/quantity". If I post a raw integer body, I need to
-        // handle it.
-        // Let's assume query param ?quantity=... is acceptable or body.
-        // Given complexity, let's use @RequestParam for simplicity unless specified.
+    public ResponseEntity<Product> updateQuantity(@PathVariable Long id, @RequestParam Integer quantity) {
         return ResponseEntity.ok(productService.updateQuantity(id, quantity));
     }
 
